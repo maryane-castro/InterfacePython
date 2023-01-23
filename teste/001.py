@@ -1,19 +1,22 @@
 import PySimpleGUI as sg
 
-sg.theme('Green')   # Add a touch of color
-# All the stuff inside your window.
-layout = [  [sg.Text('Some text on Row 1')],
-            [sg.Text('Enter something on Row 2'), sg.InputText()],
-            [sg.Button('Ok'), sg.Button('Cancel')] ]
-#oq aparece na janela
-# Create the Window
-window = sg.Window('Titulo', layout)
-# Event Loop to process "events" and get the "values" of the inputs
+# Define the window's contents
+layout = [[sg.Text("What's your name?")],
+          [sg.Input(key='-INPUT-')],
+          [sg.Text(size=(40,1), key='-OUTPUT-')],
+          [sg.Button('Ok'), sg.Button('Quit')]]
+
+# Create the window
+window = sg.Window('Window Title', layout)
+
+# Display and interact with the Window using an Event Loop
 while True:
     event, values = window.read()
-    if event == sg.WIN_CLOSED or event == 'Cancel': # if user closes window or clicks cancel
+    # See if user wants to quit or window was closed
+    if event == sg.WINDOW_CLOSED or event == 'Quit':
         break
+    # Output a message to the window
+    window['-OUTPUT-'].update('Hello ' + values['-INPUT-'] + "! Thanks for trying PySimpleGUI")
 
-    print('You entered ', values[0])
-
+# Finish up by removing from the screen
 window.close()
