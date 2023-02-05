@@ -29,8 +29,6 @@ while True:
         pass #login
 
 
-
-
     if event == sg.WINDOW_CLOSED: #se eu apertar o X da guia ele quebra o laço e fecha a janela
         break
     
