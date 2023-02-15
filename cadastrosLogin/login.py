@@ -39,7 +39,7 @@ def login():
     for i in range(len(var)):
         num = var[i].split(',')
 
-        if num[0] == nome and num[1].split('\n')[0] :
+        if num[0] == nome and num[1].split('\n')[0] == senha :
             booleano = True
             if booleano == True:
                 print('Login realizado com sucesso!')
@@ -48,7 +48,7 @@ def login():
     
         
     else:
-        print('Esse usuário não existe!')
+        print('Esse usuário não existe ou você errou a senha! Tente novamente!')
 
 
 
@@ -59,7 +59,7 @@ def sair():
 
 def lista():
     senha = input('Digite a senha do ADMINISTRADOR: ')
-    senhaADM = 'tuamae'
+    senhaADM = 'senha'
     if senha == senhaADM:
         fixario = open('C:/Users/kookp/OneDrive/Documentos/vscode/InterfacePython/cadastrosLogin/cadastros.txt', 'r')
         print('\n')
