@@ -30,17 +30,6 @@ def telaCadastro():
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 #---------TELA LOGIN----------
 def telaLogin():
     print('tela login')
@@ -64,14 +53,6 @@ def telaLogin():
             break    
         
         window.close()
-
-
-
-
-
-
-
-
 
 
 
