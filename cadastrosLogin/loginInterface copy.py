@@ -29,6 +29,18 @@ def telaCadastro():
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 #---------TELA LOGIN----------
 def telaLogin():
     print('tela login')
@@ -92,8 +104,6 @@ while True:
 
     if event == sg.WINDOW_CLOSED: #se eu apertar o X da guia ele quebra o laço e fecha a janela
         break
-    
-    
 window.close()
 
 
