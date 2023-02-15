@@ -10,7 +10,10 @@ def telaCadastro():
     sg.theme('Darkblue')
     telaCadastro = [    #oq vai ser mostrado na tela
     [sg.Text('CADASTRO')],
-    [sg.Input(key='entrada')], #entrada da informação
+    [sg.Text('Digite um nome para cadastrar:')],
+    [sg.Input(key='cadastro')],
+    [sg.Text('Digite uma senha:')],
+    [sg.Input(key='senha')],
     [sg.Text(key='saida')], #saida da informação "print na interface"
     [sg.Button('Confirmar'), sg.Button('Sair')]                           
     ]
@@ -22,10 +25,14 @@ def telaCadastro():
             print('cadastro show')
 
 
-        if event == sg.WINDOW_CLOSED: #se eu apertar o X da guia ele quebra o laço e fecha a janela
+        if event == sg.WINDOW_CLOSED or event == 'Sair': #se eu apertar o X da guia ele quebra o laço e fecha a janela
             break    
         
-        window.close()
+    window.close()
+
+
+
+
 
 
 
@@ -37,7 +44,11 @@ def telaLogin():
     sg.theme('Darkblue')
     telaLogin = [    #oq vai ser mostrado na tela
     [sg.Text('LOGIN')],
-    [sg.Input(key='entrada')], #entrada da informação
+    [sg.Text('Digite seu login e senha\n')],
+    [sg.Text('Login')],
+    [sg.Input(key='login')],
+    [sg.Text('Senha')],
+    [sg.Input(key='senha')],
     [sg.Text(key='saida')], #saida da informação "print na interface"
     [sg.Button('Confirmar'), sg.Button('Sair')]                           
     ]
@@ -47,18 +58,24 @@ def telaLogin():
         event, values = window.read()
         if event == "Confirmar":
             print('login show')
+            window['saida'].update('Login: ' + values['login'] + '\nSenha: ' + values['senha'])
 
 
-        if event == sg.WINDOW_CLOSED: #se eu apertar o X da guia ele quebra o laço e fecha a janela
+        if event == sg.WINDOW_CLOSED or event == 'Sair': #se eu apertar o X da guia ele quebra o laço e fecha a janela
             break    
         
-        window.close()
+    window.close()
+
+
+
+
+
 
 
 
 #---------TELA INICIAL----------
 
-sg.theme('Lightgray')
+sg.theme('Darkblue')
 tela = [    #oq vai ser mostrado na tela
     [sg.Text('BEM VINDO(A)')],
     [sg.Text('1-Cadastrar\n2-Login\n')],
@@ -83,7 +100,7 @@ while True:
         telaLogin()
 
 
-    if event == sg.WINDOW_CLOSED: #se eu apertar o X da guia ele quebra o laço e fecha a janela
+    if event == sg.WINDOW_CLOSED or event == 'Sair': #se eu apertar o X da guia ele quebra o laço e fecha a janela
         break
 window.close()
 
