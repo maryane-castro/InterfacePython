@@ -10,15 +10,8 @@ meuarquivo = open('C:/Users/kookp/OneDrive/Documentos/vscode/InterfacePython/tes
 
 
 
-
-
-
 nome = input('Digite o nome de usuário: ').strip()
 senha = input('Digite sua senha: ').strip()
-
-
-
-
 
 
 if nome == senha:
