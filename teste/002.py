@@ -34,19 +34,19 @@ else:
 
 /
 nome = input('Digite o nome de usuário: ').strip()
-    senha = input('Digite sua senha: ').strip()
+senha = input('Digite sua senha: ').strip()
 
-    fixario = open('C:/Users/kookp/OneDrive/Documentos/vscode/InterfacePython/cadastrosLogin/cadastros.txt', 'r')
-    var = fixario.readlines()
+fixario = open('C:/Users/kookp/OneDrive/Documentos/vscode/InterfacePython/cadastrosLogin/cadastros.txt', 'r')
+var = fixario.readlines()
 
 
-    for i in range(len(var)):
-        num = var[i].split(',')[0]  #ser criado uma lista no indice i, com dois elementos
-        if nome == num:
-            print('Login realizado!')
-            break
-        print('Login errado')
+for i in range(len(var)):
+    num = var[i].split(',')[0]  #ser criado uma lista no indice i, com dois elementos
+    if nome == num:
+        print('Login realizado!')
         break
+    print('Login errado')
+    break
 /
 
 
